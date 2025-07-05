@@ -1,0 +1,159 @@
+global:
+threads 			=       10
+thread start delay		= 	0.1s
+soft state file 		= 	softstate.txt
+soft state check delay 		= 	10s
+wait after create		=	1s
+
+sms service:
+api type			=	firefoxfun
+#keys				=	kRF0Siqg5TWkfbycgFuF6AuCDZLOFmZHGG1tv772
+api key                         =       kRF0Siqg5TWkfbycgFuF6AuCDZLOFmZHGG1tv772
+key mode                        =       parallel
+host				=	http://www.firefox.fun
+service				=	tg
+enable proxies			=	false
+proxy file			=	./smsservice/proxies.txt
+countries file			=	./smsservice/countries.txt
+countries reverse		=	false
+country price check		=	false
+country price max		=	0
+phone default delay		=	1s
+phone error delay		=	1s
+phone request limit		=	10
+sms default delay		=	5s
+sms error delay			=	1s
+sms wait time			=	2m 30s
+token                           =       b5b8d0b7b88d54986fc454bfb9d3b88a_76552
+iid                             =       1000
+operators                       =       -
+sms timeout                     =       20m
+request timeout                 =       2m
+
+telegram client:
+layer                           =  0
+connect timeout      =  1m
+connect attempts    =  5
+connect delay      =  2s
+send attempts      =  5
+send delay      =  5s
+send timeout                    =  2m
+
+token service:
+push token enable		=	true
+key				=	d3906438aaad5a7642f9bb37ee2ca59e
+host				=	https://antisafety.net/
+token type			=	2
+token file			=	tokens.txt
+error file                      =       taskids.txt
+token drop file                 =       tokendrop.txt
+
+email service:
+premium				=	false
+api type                        =       antisafety
+api key                         =       d3906438aaad5a7642f9bb37ee2ca59e
+mail default delay              =       1s
+mail error delay                =       3s
+mail wait time                  =       2m 30s
+code default delay              =       5s
+code error delay                =       3s
+code wait time                  =       1m 30s
+host                            =       https://antisafety.net/
+service                         =       telegram
+login                           =       true
+mail type                       =       2
+mail domains                    =       gmail
+storage type                    =       remote
+storage host                    =       http://127.0.0.1:5000
+
+
+registrator:
+default resend timeout		=	90s
+resend timeout limit		=	5m
+if code type app		=       skip
+if code type call		=	codecheck
+if code type flash call		=	codecheck
+if code type missed call	=	codecheck
+if code type setup email	=	verify
+if code type fragment sms	=	restart
+if code type firebase sms	=	verify
+if code type sms                =       waitsms
+if no sms                       =       resend
+if not email with call          =       ignore
+if not email with flash call    =       ignore
+if not email with missed call   =       ignore
+if not email with fragment sms  =       ignore
+if not email with firebase sms  =       ignore
+if not email with sms           =       ignore
+if not email with app           =       ignore
+email setup attempts		=	3
+temp account dir		=	./temp
+registered account dir		=	./registered
+authorized account dir		=	./authorized
+setup 2fa			=	false
+if code type email code         =       skip
+restart limit                   =       1
+restart wait                    =       1s
+enable integrity verification   =       false
+lang code file                  =  ./client/langcode.txt
+lang pack file                  =  ./client/langpack.txt
+system lang code file           =  ./client/system_langcode.txt
+if not captcha with call         =    ignore
+if not captcha with flash call   =    ignore
+if not captcha with missed call  =   ignore
+if not captcha with fragment sms =    ignore
+if not captcha with firebase sms =    ignore
+if not captcha with sms          =    ignore
+if not captcha with app          =    ignore
+enable captcha solve             =    true
+
+
+generator:
+pairs file			=	./client/id_hash.txt
+devices file			=	./client/devices.txt
+sdk file			=	./client/sdk.txt
+app version file		=	./client/app_versions.txt
+lang code file			=	./client/langcode.txt
+lang pack file			=	./client/langpack.txt
+system lang code file		=	./client/system_langpack.txt
+timezone file			=	./client/tz.txt
+perfcat file			=	./client/perfcat.txt
+proxy type			=	socks5
+proxies file			=	./client/proxies.txt
+first names file		=	./client/first_names.txt
+last names file			=	./client/last_names.txt
+password length			=	8
+type                            =       standart
+proxy info host                 =       http://194.15.46.98
+proxy info error delay          =       10s
+package ids file                =       ./client/package_ids.txt 
+
+stat:
+full stat file			=	./stat/stat-full.json
+count stat file			=	./stat/stat-country.txt
+history file			=	./stat/stat-full.txt
+log 2fa file			=	./stat/log-2fa.txt
+log banned file			=	./stat/log-banned.txt
+log not sms file		=	./stat/log-nosms.txt
+log error file			=	./stat/log-error.txt
+log registered file		=	./stat/log-registered.txt
+log authorized file		=	./stat/log-authorized.txt
+log captcha file                =       ./stat/captcha.txt
+savestat                        =       false
+log not sms has email file  =  ./stat/log-nosms-email.txt
+
+
+check number service:
+check service type    =  enable
+host        =  http://127.0.0.1:9000
+task default delay              =       1s
+task error delay                =       3s
+task wait time                  =       2m 30s
+result default delay            =       5s
+result error delay              =       3s
+result wait time                =       1m 30s
+result timeout      =  5m
+use not occupied    =  true
+use has user      =  false
+use not user      =  true
+use if no result    =  false
